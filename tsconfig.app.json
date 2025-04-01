@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       // ...
-      "baseUrl": ".",
+      "baseUrl": "ai-copywriter-frontend",
       "jsx": "react",
       "paths": {
         "@/*": [
