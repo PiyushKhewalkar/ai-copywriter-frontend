@@ -21,9 +21,9 @@ function App() {
     <>
       <Layout>
         <Headline />
-        {/* <Searchbar /> */}
-        {/* <PersonaList /> */}
-        <Painpoints />
+        <Searchbar /> 
+        <PersonaList />
+        {/* <Painpoints /> */}
       </Layout>
     </>
   )
