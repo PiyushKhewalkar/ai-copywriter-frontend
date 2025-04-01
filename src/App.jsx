@@ -1,13 +1,17 @@
-import PersonaList from './components/PersonaList.jsx'
+import PersonaList from './components/common/Cardgrid.jsx'
 import './index.css'
 import Layout from './app/layout.jsx'
+import Searchbar from './components/common/Searchbar.jsx'
+import Headline from './components/common/Headline.jsx'
 
 function App() {
  
   return (
     <>
       <Layout>
-      <PersonaList />
+        <Headline />
+        <Searchbar />
+        <PersonaList />
       </Layout>
     </>
   )

@@ -1,20 +1,25 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar.jsx"
-import { AppSidebar } from "@/components/app-sidebar.jsx"
-import CreateNewPersonaButton from "../components/CreateNewPersonaButton.jsx"
+import { SidebarProvider} from "@/components/ui/sidebar.jsx"
+import { AppSidebar } from "@/components/layout/Sidebar.jsx"
+import Header from "@/components/layout/header.jsx"
  
 export default function Layout({ children }) {
   return (
     <>
     <SidebarProvider>
       <AppSidebar />
-        <div className="w-full">
-        <div className="flex justify-between items-center m-4">
-        <SidebarTrigger />
-        <CreateNewPersonaButton />
+      
+        <div className="w-full">  
+
+          <header  className="flex justify-between items-center m-4">
+            < Header />
+          </header>
+
+          {children}
+
         </div>
-        {children}
-        </div>
-        </SidebarProvider>   x
+
+        </SidebarProvider>
+        
     </>
   )
 }
