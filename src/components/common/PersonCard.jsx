@@ -20,7 +20,7 @@ import menuDots from "../../assets/menu-dots-vertica.svg";
 function PersonCard({persona}) {
   return (
 
-      <Card className="rounded-sm w-full p-3 cursor-pointer" >
+      <Card className="rounded-sm w-full p-3 cursor-pointer" onClick={(e)=> console.log(persona._id)} >
         <CardContent className="space-y-2">
         <div className="bg-[#5271ff] text-[12px] font-medium px-[8px] py-[5px] rounded-[3px] w-fit">
           {persona.jobTitle}

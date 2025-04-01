@@ -20,7 +20,7 @@ function PersonaList() {
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {allPersona.length > 0 ? (
           allPersona.map((persona, index) => (
-            <PersonCard key={persona.id} persona={persona} />
+            <PersonCard key={persona._id} persona={persona} />
           ))
         ) : (
           <p>Loading</p>
