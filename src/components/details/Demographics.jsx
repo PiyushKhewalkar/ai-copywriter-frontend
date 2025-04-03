@@ -87,7 +87,7 @@ import {Card} from "@/components/ui/card.jsx"
 //     __v: 0,
 //   };
 
-function Demographics() {
+function Demographics({persona}) {
   return (
      
           <Card className="rounded-sm w-full p-3">

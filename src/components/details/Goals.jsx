@@ -86,7 +86,7 @@ import {Card} from "@/components/ui/card.tsx"
 //     __v: 0,
 //   };
 
-function Goals() {
+function Goals({persona}) {
   return (
     <div>
         <Card className="rounded-sm w-full p-3">
