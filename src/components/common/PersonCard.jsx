@@ -13,6 +13,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+import { Link } from "react-router-dom";
+
 import {Button} from "@/components/ui/button.tsx"
 
 import menuDots from "../../assets/menu-dots-vertica.svg";
@@ -30,9 +32,10 @@ function PersonCard({persona}) {
           {persona.twoOrThreeLinerDescription}
         </p>
         <div className="flex justify-between">
+          <Link to={`/dashboard/avatars/${persona._id}`}>
           <Button className="rounded-[4px] cursor-pointer" variant="secondary">
             View Profile
-          </Button>
+          </Button></Link>
           <DropdownMenu className="cursor-pointer">
             <DropdownMenuTrigger className="cursor-pointer">
               <img
