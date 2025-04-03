@@ -32,7 +32,7 @@ function PersonCard({persona}) {
           {persona.twoOrThreeLinerDescription}
         </p>
         <div className="flex justify-between">
-          <Link to={`/dashboard/avatars/${persona._id}`}>
+          <Link to={`/ai-copywriter-frontend/dashboard/avatars/${persona._id}`}>
           <Button className="rounded-[4px] cursor-pointer" variant="secondary">
             View Profile
           </Button></Link>

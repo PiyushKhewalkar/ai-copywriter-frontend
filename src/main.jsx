@@ -11,9 +11,9 @@ import AvatarDetails from  "./pages/AvatarDetails.jsx"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 
 const router = createBrowserRouter([
-  {path : "/dashboard", element: <Dashboard />},
-  {path : "/dashboard/avatars", element: <Avatars />},
-  {path : "/dashboard/avatars/:id", element: <AvatarDetails />}
+  {path : "/ai-copywriter-frontend/dashboard", element: <Dashboard />},
+  {path : "/ai-copywriter-frontend/dashboard/avatars", element: <Avatars />},
+  {path : "/ai-copywriter-frontend/dashboard/avatars/:id", element: <AvatarDetails />}
 ])
 
 createRoot(document.getElementById('root')).render(

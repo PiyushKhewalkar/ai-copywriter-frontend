@@ -41,7 +41,7 @@ function AvatarDetails() {
   return (
     <Layout>
       <div className="mx-5 space-y-5 my-10">
-        <Link to={"/dashboard/avatars"}>
+        <Link to={"/ai-copywriter-frontend/dashboard/avatars"}>
         <Button className="mb-5 rounded-sm cursor-pointer" variant="outline">Go Back</Button>
         </Link>
         {details ? (

@@ -5,7 +5,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/', // Make sure this matches your repo name
+  base: '/ai-copywriter-frontend', // Make sure this matches your repo name
   build: {
     outDir: 'dist',
   },
