@@ -89,7 +89,8 @@ const persona = {
 function Goals() {
   return (
     <div>
-        <Card className="rounded-sm w-full p-3 mx-5">
+        <Card className="rounded-sm w-full p-3">
+        <h1 className="text-xl font-medium">Goals & Vision</h1>
             <p><span className='font-medium'>📌 Primary Goal:</span> {persona.goalsAndAspirations.primaryGoal}</p>
             <ul>
                 <p className='font-medium'>📌 Secondary Goals</p>

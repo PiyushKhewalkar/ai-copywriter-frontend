@@ -1,8 +1,12 @@
 import React from 'react'
+import Layout from '../app/layout'
 
 function Dashboard() {
   return (
-    <div>The Main dashboard home</div>
+  
+      <Layout>
+        <div className='text-xl'>Dashboard Home</div>
+      </Layout>
   )
 }
 

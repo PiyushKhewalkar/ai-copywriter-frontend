@@ -89,7 +89,8 @@ const persona = {
 function Painpoints() {
   return (
     <div>
-        <Card className="rounded-sm w-full p-3 mx-5">
+        <Card className="rounded-sm w-full p-3">
+        <h1 className="text-xl font-medium">Pain Points</h1>
             <ul>
                 <p className='font-medium'>📌 Biggest Problems</p>
                 {persona.painPointsAndChallenges.biggestProblems.map((problem, index)=>(
