@@ -12,6 +12,7 @@ function PersonaList() {
     console.log(allPersona)
   }, []);
 
+
   return (
     <div className="m-5">
       <div className="my-5">
