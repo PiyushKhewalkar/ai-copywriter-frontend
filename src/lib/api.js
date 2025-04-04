@@ -15,3 +15,14 @@ export const fetchAllPersona = async() => {
 
     }
 }
+
+export const generatePersona = async(userInputs) => {
+    try {
+
+        const response = await axios.post()
+        
+    } catch (error) {
+        console.error("Error fetching users:", error);
+      return [];
+    }
+}
