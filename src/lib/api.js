@@ -19,7 +19,9 @@ export const fetchAllPersona = async() => {
 export const generatePersona = async(userInputs) => {
     try {
 
-        const response = await axios.post()
+        const response = await axios.post(`${API_URL}/api/persona/generate`, userInputs)
+
+        return response.data.newPersona
         
     } catch (error) {
         console.error("Error fetching users:", error);
