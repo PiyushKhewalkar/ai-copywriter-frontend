@@ -26,14 +26,15 @@ function Avatars() {
         .includes(searchTerm.toLowerCase())
     );
     setFilteredPersona(filtered);
+    console.log(allPersona)
   }, [searchTerm, allPersona]);
 
     return (
 
         <>
           <Layout>
-            <Headline />
-            <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> 
+            <Headline heading="Dream Buyer Avatar" formType="avatar" />
+            <Searchbar placeholder="search avatar" searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> 
             <PersonaList filteredPersona={filteredPersona} />
           </Layout>
         </>
