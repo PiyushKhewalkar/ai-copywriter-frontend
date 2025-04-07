@@ -1,33 +1,26 @@
 import React from 'react'
 
-import {
-    Card,
-    CardContent,
-    CardTitle,
-  } from "@/components/ui/card.tsx";
-  
-  import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
-  
-  import { Link } from "react-router-dom";
-  
-  import {Button} from "@/components/ui/button.tsx"
-  
-  import menuDots from "../../assets/menu-dots-vertica.svg";
+// icons
+import menuDots from "../../assets/menu-dots-vertica.svg";
+
+
+// router dom
+import { Link } from 'react-router-dom'
+
+// ui components
+import { Button } from '../ui/button.jsx'
+import {DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem} from "../ui/dropdown-menu.jsx"
+import {Card, CardContent, CardTitle} from "../ui/card.jsx"
 
 function ProductCard({product}) {
   return (
-    <Card className="rounded-sm p-3 cursor-pointer">
+    <Card className="rounded-sm md:w-[370px] w-[250px] text-wrap p-3 cursor-pointer">
             <CardContent className="space-y-2">
             <div className="bg-[#272321] text-[12px] font-medium px-[8px] py-[5px] rounded-[3px] w-fit">
               {product.category}
             </div>
-            <CardTitle className="text-2xl my-2">{product.name}</CardTitle>
-            <p className="w-fit text-[16px] opacity-70 text-gray-300">
+            <CardTitle className="text-xl my-2 line-clamp-2">{product.name}</CardTitle>
+            <p className="w-fit text-[16px] opacity-70 text-gray-300 line-clamp-2">
               {product.description}
             </p>
             <div className="flex justify-between">

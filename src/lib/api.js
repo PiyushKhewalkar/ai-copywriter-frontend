@@ -58,3 +58,16 @@ export const createProduct = async(productDetails) => {
         
     }
 }
+
+export const getAllCampaigns = async() => {
+    try {
+
+        const response = await axios.get(`${API_URL}/api/campaign`)
+
+        return response.data.campaigns
+        
+    } catch (error) {
+        console.error("Error fetching campaigns:", error)
+        return []
+    }
+}
