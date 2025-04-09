@@ -90,6 +90,7 @@ import { Button } from "@/components/ui/button.tsx";
 // };
 
 function Intro({persona}) {
+
   return (
     <div>
       <Card className="rounded-sm w-full p-3">

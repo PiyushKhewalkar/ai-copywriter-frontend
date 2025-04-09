@@ -2,6 +2,9 @@ import axios from "axios";
 
 const API_URL = "https://ai-copywriter-backend.onrender.com"
 
+
+// personas
+
 export const fetchAllPersona = async() => {
     try {
 
@@ -26,6 +29,20 @@ export const generatePersona = async(userInputs) => {
     } catch (error) {
         console.error("Error generating avatars:", error);
       return [];
+    }
+}
+
+export const deletePersona = async() => {
+    try {
+
+        const response = await axios.delete(`${API_URL}/api/persona/:personaId`)
+
+        return response.data.allPersona
+        
+    } catch (error) {
+        console.error("Error fetching avatars:", error);
+      return [];
+
     }
 }
 

@@ -13,6 +13,7 @@ import Products from './pages/Products/Products.jsx'
 
 // router
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import ProductDetails from './pages/Products/ProductDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   {path : "/ai-copywriter-frontend/dashboard/avatars", element: <Avatars />},
   {path : "/ai-copywriter-frontend/dashboard/avatars/:id", element: <AvatarDetails />},
   {path : "/ai-copywriter-frontend/dashboard/products", element : <Products/>},
+  {path : "/ai-copywriter-frontend/dashboard/products/:id", element : <ProductDetails/>},
   {path : "/ai-copywriter-frontend/dashboard/campaigns/new", element : <CampaignForm/>},
   {path : "/ai-copywriter-frontend/dashboard/campaigns", element : <Campaigns/>}
 ])
