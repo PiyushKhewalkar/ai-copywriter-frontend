@@ -36,7 +36,7 @@ function CampaignForm() {
                     <h3 className="text-2xl font-bold">New Campaign</h3>
                     <p>fill the following inputs, to generate a full fledged campaign</p>
                 </div>
-                <Form personas={allPersonas} />
+                <Form />
             </div>
          </Layout>
 

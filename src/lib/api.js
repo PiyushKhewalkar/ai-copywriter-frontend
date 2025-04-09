@@ -71,3 +71,16 @@ export const getAllCampaigns = async() => {
         return []
     }
 }
+
+export const generateCampaignJson = async({name, avatarId, productId, channels, goal, offerLine}) => {
+    try {
+
+        const response = await axios.post(`${API_URL}/api/campaign/generate`, {name, avatarId, productId, channels, goal, offerLine})
+
+        return response.data.campaign
+        
+    } catch (error) {
+        console.error("Error generating campaign:", error)
+        return []
+    }
+}
