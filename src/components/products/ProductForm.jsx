@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Loader2 } from "lucide-react";
-
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
@@ -13,16 +11,16 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+
+
+import TextInput from "../common/formFields/TextInput";
+import TextArea from "../common/formFields/TextArea";
+import SubmitButton from "../common/formFields/SubmitButton";
 
 import { createProduct } from "../../lib/api";
 
 export function ProductForm() {
-
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   const [userInputs, setUserInputs] = useState({
     name: "",
@@ -55,13 +53,11 @@ export function ProductForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
-
     try {
-      setIsLoading(true)
+      setIsLoading(true);
       const newProduct = await createProduct(userInputs);
       setProduct(newProduct);
-      setIsLoading(false)
+      setIsLoading(false);
       navigate(`/ai-copywriter-frontend/dashboard/products/`);
       console.log("New Product:", newProduct);
     } catch (error) {
@@ -70,22 +66,22 @@ export function ProductForm() {
 
     // Clear the form after submission
     setUserInputs({
-        name: "",
-        category: "",
-        description: "",
-        targetMarket: "",
-        pressingProblem: "",
-        desiredOutcome: "",
-        usp: "",
-        specificMethod: "",
-        stats: "",
-        featuredIn: "",
-        credibleFigure: "",
-        uniqueMechanism: "",
-        numberOfReviews: "",
-        avgReviewRating: "",
-        totalCustomers: "",
-        testimonials: "",
+      name: "",
+      category: "",
+      description: "",
+      targetMarket: "",
+      pressingProblem: "",
+      desiredOutcome: "",
+      usp: "",
+      specificMethod: "",
+      stats: "",
+      featuredIn: "",
+      credibleFigure: "",
+      uniqueMechanism: "",
+      numberOfReviews: "",
+      avgReviewRating: "",
+      totalCustomers: "",
+      testimonials: "",
     });
   };
 
@@ -102,202 +98,172 @@ export function ProductForm() {
           </DialogDescription>
         </DialogHeader>
         <form className="grid gap-4 py-4" action="" onSubmit={handleSubmit}>
-      
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="name" className="">
-                Name
-              </Label>
-              <Input
-                id="name"
-                required
-                value={userInputs.name}
-                onChange={handleChange}
-                placeholder="ABC Shampoo"
-                className="col-span-3"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="category" className="">
-                Category
-              </Label>
-              <Input
-                id="category"
-                required
-                value={userInputs.category}
-                onChange={handleChange}
-                placeholder="Cosmetics"
-                className="col-span-3"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="description" className="">
-                Description
-              </Label>
-              <Textarea
-                id="description"
-                required
-                value={userInputs.description}
-                onChange={handleChange}
-                placeholder="Write a description about your product"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="targetMarket" className="">
-                Target Market
-              </Label>
-              <Input
-                id="targetMarket"
-                value={userInputs.targetMarket}
-                onChange={handleChange}
-                placeholder="Women above 25"
-                className="col-span-3"
-              />
-            </div>
-       
           <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="pressingProblem" className="">
-                Pressing Problem
-              </Label>
-              <Textarea
-                id="pressingProblem"
-                value={userInputs.pressingProblem}
-                onChange={handleChange}
-                placeholder="Problem your product solves"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="desiredOutcome" className="">
-                Desired Outcome
-              </Label>
-              <Textarea
-                id="desiredOutcome"
-                value={userInputs.desiredOutcome}
-                onChange={handleChange}
-                placeholder="Desired Outcome"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="usp" className="">
-                Product Features / USP
-              </Label>
-              <Textarea
-                id="usp"
-                value={userInputs.usp}
-                onChange={handleChange}
-                placeholder="Specific features or USP about your product"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="specificMethod">
-                Specific Technology / ingredients / Methodology
-              </Label>
-              <Textarea
-                id="specificMethod"
-                value={userInputs.specificMethod}
-                onChange={handleChange}
-                placeholder="Specific technology your product has"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="stats" className="">
-                Scientific studies / Research / stats
-              </Label>
-              <Textarea
-                id="stats"
-                value={userInputs.stats}
-                onChange={handleChange}
-                placeholder="Scientific research about your product"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="featuredIn" className="">
-                Featured In
-              </Label>
-              <Textarea
-                id="featuredIn"
-                value={userInputs.featuredIn}
-                onChange={handleChange}
-                placeholder="eg. Shark Tank India"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="credibleFigure" className="">
-                Credible Authority Figure
-              </Label>
-              <Textarea
-                id="credibleFigure"
-                value={userInputs.credibleFigure}
-                onChange={handleChange}
-                placeholder="Eg. Bryan Johnson"
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="uniqueMechanism" className="">
-                Unique Mechanism
-              </Label>
-              <Textarea
-                id="uniqueMechanism"
-                value={userInputs.uniqueMechanism}
-                onChange={handleChange}
-                placeholder="Eg. Made from himalayan..."
-                className="col-span-3 resize-none"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="numberOfReviews" className="">
-                Number of Reviews
-              </Label>
-              <Input
-                id="numberOfReviews"
-                value={userInputs.numberOfReviews}
-                onChange={handleChange}
-                placeholder="Ex. 230"
-                className="col-span-3"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="avgReviewRating" className="">
-                Avg review rating
-              </Label>
-              <Input
-                id="avgReviewRating"
-                value={userInputs.avgReviewRating}
-                onChange={handleChange}
-                placeholder="Eg. 4.3/5.0"
-                className="col-span-3"
-              />
-            </div>
-            <div className="grid grid-cols-2 items-center gap-2">
-              <Label htmlFor="totalCustomers" className="">
-                Total no. of customers
-              </Label>
-              <Input
-                id="totalCustomers"
-                value={userInputs.totalCustomers}
-                onChange={handleChange}
-                placeholder="ex. 1013"
-                className="col-span-3"
-              />
-            </div>
-            
+            <TextInput
+              label={"Name"}
+              id={"name"}
+              placeholder={"Ex. ABC Shampoo"}
+              value={userInputs.name}
+              onChange={handleChange}
+              required={true}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+            <TextInput
+              label={"Category"}
+              id={"category"}
+              placeholder={"Ex. Hair care"}
+              value={userInputs.category}
+              onChange={handleChange}
+              required={true}
+            />
+          </div>
+       
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Description"}
+              id={"description"}
+              placeholder={"Ex. 3 in 1 Haircare product that takes care of your hairs in just 30 secs a day"}
+              value={userInputs.description}
+              onChange={handleChange}
+              required={true}
+            />
+          </div>
+
+
+
+          <div className="grid grid-cols-2 items-center gap-2">
+            <TextInput
+              label={"Target Market"}
+              id={"targetMarket"}
+              placeholder={"Ex. Women above 25"}
+              value={userInputs.targetMarket}
+              onChange={handleChange}
+              required={false}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Pressing Problem"}
+              id={"pressingProblem"}
+              placeholder={"Ex. Hair care for busy professionals who don't have time"}
+              value={userInputs.pressingProblem}
+              onChange={handleChange}
+              required={false}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Desired Outcome"}
+              id={"desiredOutcome"}
+              placeholder={"Ex. Healthy hairs in minimal time and effort"}
+              value={userInputs.desiredOutcome}
+              onChange={handleChange}
+              required={false}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Product Features / USP"}
+              id={"usp"}
+              placeholder={"Ex. Minimal time, Minimal Effort, Maximum Results"}
+              value={userInputs.usp}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Specific Technology / Ingredients / Methodology"}
+              id={"specificMethod"}
+              placeholder={"Ex. Made of the plans from Himalaya"}
+              value={userInputs.specificMethod}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Scientific Studies / Research / Stats"}
+              id={"stats"}
+              placeholder={"Ex. Reduces hairfall by 95% in a week of use"}
+              value={userInputs.stats}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Featured In"}
+              id={"featuredIn"}
+              placeholder={"Ex. American Express, Forbes"}
+              value={userInputs.featuredIn}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Credible Authority Figure"}
+              id={"credibleFigure"}
+              placeholder={"Ex. Bryan Johnson"}
+              value={userInputs.credibleFigure}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+          <TextArea
+              label={"Unique Mechanism"}
+              id={"uniqueMechanism"}
+              placeholder={"Ex. Repairs and Regrows lost hair folicles"}
+              value={userInputs.uniqueMechanism}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+            <TextInput
+              label={"Number of Reviews"}
+              id={"numberOfReviews"}
+              placeholder={"Ex. 230"}
+              value={userInputs.numberOfReviews}
+              onChange={handleChange}
+              required={false}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+            <TextInput
+              label={"Average Review Rating"}
+              id={"avgReviewRating"}
+              placeholder={"Ex. Women above 25"}
+              value={userInputs.avgReviewRating}
+              onChange={handleChange}
+              required={false}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 items-center gap-2">
+            <TextInput
+              label={"Total Customers"}
+              id={"totalCustomers"}
+              placeholder={"Ex. 645"}
+              value={userInputs.totalCustomers}
+              onChange={handleChange}
+              required={false}
+            />
+          </div>
 
           <DialogFooter>
-            {!isLoading ? (
-              <Button type="submit">Create Product</Button>
-            ) : (
-              <Button disabled>
-                <Loader2 className="animate-spin" />
-                Creating
-              </Button>
-            )}
+
+            <SubmitButton label={"Create Product"} loadingLabel={"Creating..."} isLoading={isLoading} handleSubmit={handleSubmit} />
+            
           </DialogFooter>
         </form>
       </DialogContent>

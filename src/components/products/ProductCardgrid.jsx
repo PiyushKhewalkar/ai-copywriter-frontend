@@ -2,7 +2,7 @@ import React from 'react'
 
 import ProductCard from './ProductCard'
 
-function ProductCardgrid({filteredProducts}) {
+function ProductCardGrid({filteredProducts}) {
   return (
     <div className="m-5">
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
@@ -18,4 +18,4 @@ function ProductCardgrid({filteredProducts}) {
   );
 }
 
-export default ProductCardgrid
+export default ProductCardGrid

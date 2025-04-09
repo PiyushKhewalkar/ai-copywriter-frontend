@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import PersonaList from '../components/common/Cardgrid.jsx'
-import Layout from '../app/layout.jsx'
-import Searchbar from '../components/common/Searchbar.jsx'
-import Headline from '../components/common/Headline.jsx'
+import AvatarCardGrid from '@/components/avatars/AvatarCardGrid.jsx'
+import Layout from '@/app/layout.jsx'
+import Searchbar from '@/components/common/Searchbar.jsx'
+import Headline from '@/components/common/Headline.jsx'
 
 //api
-import { fetchAllPersona } from '../lib/api.js'
+import { fetchAllPersona } from '@/lib/api.js'
 
 function Avatars() {
 
@@ -35,7 +35,7 @@ function Avatars() {
           <Layout>
             <Headline heading="Dream Buyer Avatar" formType="avatar" />
             <Searchbar placeholder="search avatar" searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> 
-            <PersonaList filteredPersona={filteredPersona} />
+            <AvatarCardGrid filteredPersona={filteredPersona} />
           </Layout>
         </>
       )

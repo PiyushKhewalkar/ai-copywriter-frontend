@@ -30,7 +30,7 @@ function CampaignCard({campaign, product}) {
         <CardContent className='space-y-2'>
         <h3 className='text-xl font-medium line-clamp-1'>{campaign.name}</h3>
         <p className='line-clamp-1'>Product: {campaign.product}</p>
-        <p className='line-clamp-1'>Channel: {channels.join(", ")}</p>
+        <p className='line-clamp-1'>Channel: {campaign.chosenChannels.join(", ")}</p>
         <div className="flex justify-between">
             <Link to={`/ai-copywriter-frontend/dashboard/campaigns/${campaign._id}`}>
                 <Button className="rounded-[4px] cursor-pointer" variant="secondary">

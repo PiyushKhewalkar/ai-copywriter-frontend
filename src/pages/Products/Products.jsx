@@ -5,17 +5,17 @@
 // products
 
 import React, { useEffect, useState } from 'react'
-import Searchbar from '../components/common/Searchbar'
-import Layout from '../app/layout'
+import Searchbar from '../../components/common/Searchbar'
+import Layout from '../../app/layout'
 
 // components
-import ProductCard from '../components/products/ProductCard'
-import Headline from '../components/common/Headline'
+import ProductCard from '../../components/products/ProductCard'
+import Headline from '../../components/common/Headline'
 
 // api
 
-import { getProducts } from '../lib/api'
-import ProductCardgrid from '../components/products/ProductCardgrid'
+import { getProducts } from '../../lib/api'
+import ProductCardgrid from '../../components/products/ProductCardgrid'
 
 function Products() {
 

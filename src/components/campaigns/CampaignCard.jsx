@@ -19,22 +19,22 @@ import {Button} from "@/components/ui/button.tsx"
 
 import menuDots from "../../assets/menu-dots-vertica.svg";
 
-function PersonCard({persona}) {
+function CampaignCard({campaign}) {
   return (
 
-      <Card className="rounded-sm w-full p-3 cursor-pointer" onClick={(e)=> console.log(persona._id)} >
+      <Card className="rounded-sm w-full p-3 cursor-pointer" onClick={(e)=> console.log(campaign._id)} >
         <CardContent className="space-y-2">
         <div className="bg-[#5271ff] text-[12px] font-medium px-[8px] py-[5px] rounded-[3px] w-fit">
-          {persona.jobTitle}
+          {(campaign.chosenChannels).join(", ")}
         </div>
-        <CardTitle className="text-2xl my-2">{persona.name}</CardTitle>
-        <p className="w-fit text-[16px] opacity-70 text-gray-300">
-          {persona.twoOrThreeLinerDescription}
+        <CardTitle className="text-2xl my-2 line-clamp-1">{campaign.name}</CardTitle>
+        <p className="w-fit text-[16px] line-clamp-1 opacity-70 text-gray-300">
+          {campaign.product}
         </p>
         <div className="flex justify-between">
-          <Link to={`/ai-copywriter-frontend/dashboard/avatars/${persona._id}`}>
+          <Link to={`/ai-copywriter-frontend/dashboard/campaigns/${campaign._id}`}>
           <Button className="rounded-[4px] cursor-pointer" variant="secondary">
-            View Profile
+            View Campaign
           </Button></Link>
           <DropdownMenu className="cursor-pointer">
             <DropdownMenuTrigger className="cursor-pointer">
@@ -57,4 +57,4 @@ function PersonCard({persona}) {
   );
 }
 
-export default PersonCard;
+export default CampaignCard;

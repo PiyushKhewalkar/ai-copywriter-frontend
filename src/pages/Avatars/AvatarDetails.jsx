@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 // layout
-import Layout from '../app/layout'
+import Layout from '../../app/layout'
 
 // components
-import Demographics from "../components/details/Demographics.jsx"
-import Goals from "../components/details/Goals.jsx"
-import Intro from "../components/details/Intro.jsx"
-import Professional from "../components/details/Professional.jsx"
-import Painpoints from '../components/details/Painpoint.jsx'
+
+import Demographics from "@/components/avatars/details/Demographics.jsx"
+import Goals from "@/components/avatars/details/Goals.jsx"
+import Intro from "@/components/avatars/details/Intro.jsx"
+import Professional from "@/components/avatars/details/Professional.jsx"
+import Painpoints from "@/components/avatars/details/Painpoint.jsx"
 
 // ui components
 import { Button } from "@/components/ui/button.tsx"
