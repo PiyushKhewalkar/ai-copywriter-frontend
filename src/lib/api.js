@@ -32,10 +32,10 @@ export const generatePersona = async(userInputs) => {
     }
 }
 
-export const deletePersona = async() => {
+export const deletePersona = async(personaId) => {
     try {
 
-        const response = await axios.delete(`${API_URL}/api/persona/:personaId`)
+        const response = await axios.delete(`${API_URL}/api/persona/${personaId}`)
 
         return response.data.allPersona
         

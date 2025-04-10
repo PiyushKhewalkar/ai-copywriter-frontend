@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 // layout
 import Layout from '../../app/layout'
@@ -17,11 +17,13 @@ import { Button } from "@/components/ui/button.tsx"
 
 //router
 import { Link } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 //api
 import { deletePersona } from '../../lib/api'
 
 function AvatarDetails() {
+  const navigate = useNavigate()
   const { id } = useParams();
   const [details, setDetails] = useState(null); // ✅ Use null instead of []
 
@@ -42,6 +44,11 @@ function AvatarDetails() {
       });
   }, [id]);
 
+  const handleDeleteSuccess = () => {
+    setDetails(null);
+    navigate("/ai-copywriter-frontend/dashboard/avatars")
+  };
+
   return (
     <Layout>
       <div className="mx-5 space-y-5 my-10">
@@ -50,7 +57,7 @@ function AvatarDetails() {
         </Link>
         {details ? (
           <>
-            <Intro persona={details} />
+            <Intro persona={details} onDeleteSuccess={handleDeleteSuccess} />
             <Demographics persona={details} />
             <Professional persona={details} />
             <Goals persona={details} />

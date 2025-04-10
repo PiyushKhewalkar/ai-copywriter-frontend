@@ -6,9 +6,9 @@ function SubmitButton({label, loadingLabel, isLoading}) {
   return (
    <>
    {!isLoading ? (
-                 <Button className='cursor-pointer' type="submit">{label}</Button>
+                 <Button className='cursor-pointer w-full py-2 font-semibold' type="submit">{label}</Button>
                ) : (
-                 <Button disabled>
+                 <Button disabledn className='w-full py-2 font-semibold'>
                    <Loader2 className="animate-spin cursor-pointer" />
                    {loadingLabel}
                  </Button>

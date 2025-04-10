@@ -24,11 +24,11 @@ function AvatarCard({persona}) {
 
       <Card className="rounded-sm w-full p-3 cursor-pointer" onClick={(e)=> console.log(persona._id)} >
         <CardContent className="space-y-2">
-        <div className="bg-[#5271ff] text-[12px] font-medium px-[8px] py-[5px] rounded-[3px] w-fit">
+        <div className="bg-[#5271ff] text-[12px] font-medium px-[8px] py-[5px] rounded-[3px] w-fit line-clamp-1">
           {persona.jobTitle}
         </div>
-        <CardTitle className="text-2xl my-2">{persona.name}</CardTitle>
-        <p className="w-fit text-[16px] opacity-70 text-gray-300">
+        <CardTitle className="text-2xl my-2 line-clamp-1">{persona.name}</CardTitle>
+        <p className="w-fit text-[16px] opacity-70 text-gray-300 line-clamp-3">
           {persona.twoOrThreeLinerDescription}
         </p>
         <div className="flex justify-between">
